@@ -15,7 +15,7 @@ abstract: >-
   the officially released pretrained checkpoint is evaluated unmodified.
 authors:
   - name: SO-101 Capstone Perception Team
-repository-code: https://github.com/somene112/so101-groundingdino-baseline
+repository-code: https://github.com/aumi102/so101-groundingdino-baseline
 license: MIT
 keywords:
   - object-detection
