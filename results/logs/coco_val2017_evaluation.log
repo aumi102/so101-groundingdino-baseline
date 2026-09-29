@@ -1,0 +1,239 @@
+==============================================================
+GroundingDINO official COCO zero-shot evaluation
+==============================================================
+start (UTC)  : 2026-09-26T14:46:13Z
+commit       : 856dde20aee659246248e20734ef9ba5214f5e44
+config sha256: 172e80017f9395668a9cb5d1b8bd9d061c0e360471c6ed673c83b69bb14399f1
+ckpt sha256  : 3b3ca2563c77c69f651d7bd133e97139c186df06231157a64c507099c52bc799
+anno sha256  : e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f
+images       : 5000
+gpu          : NVIDIA GeForce RTX 4060 Laptop GPU, 592.82
+python       : Python 3.10.12
+torch        : 2.1.2+cu121 12.1
+transformers : 4.36.2
+numpy        : 1.26.4
+
+Official expected result: 48.5 (README) / 48.4 (checkpoint table).
+See docs/reproduction/01_PUBLIC_BASELINE.md for why both numbers exist.
+
+/root/repro/.venv-repro/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/root/repro/.venv-repro/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3526.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+final text_encoder_type: bert-base-uncased
+/root/repro/.venv-repro/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+loading annotations into memory...
+Done (t=0.32s)
+creating index...
+index created!
+/root/repro/.venv-repro/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+final text_encoder_type: bert-base-uncased
+Input text prompt: person . bicycle . car . motorcycle . airplane . bus . train . truck . boat . traffic light . fire hydrant . stop sign . parking meter . bench . bird . cat . dog . horse . sheep . cow . elephant . bear . zebra . giraffe . backpack . umbrella . handbag . tie . suitcase . frisbee . skis . snowboard . sports ball . kite . baseball bat . baseball glove . skateboard . surfboard . tennis racket . bottle . wine glass . cup . fork . knife . spoon . bowl . banana . apple . sandwich . orange . broccoli . carrot . hot dog . pizza . donut . cake . chair . couch . potted plant . bed . dining table . toilet . tv . laptop . mouse . remote . keyboard . cell phone . microwave . oven . toaster . sink . refrigerator . book . clock . vase . scissors . teddy bear . hair drier . toothbrush .
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+/root/repro/.venv-repro/lib/python3.10/site-packages/transformers/modeling_utils.py:942: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+/root/repro/.venv-repro/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+processed 29/5000 images. time: 11.79s, ETA: 2020.81s
+processed 59/5000 images. time: 21.74s, ETA: 1820.48s
+processed 89/5000 images. time: 31.75s, ETA: 1751.93s
+processed 119/5000 images. time: 41.61s, ETA: 1706.88s
+processed 149/5000 images. time: 51.86s, ETA: 1688.36s
+processed 179/5000 images. time: 62.04s, ETA: 1670.95s
+processed 209/5000 images. time: 72.46s, ETA: 1661.08s
+processed 239/5000 images. time: 82.65s, ETA: 1646.47s
+processed 269/5000 images. time: 92.89s, ETA: 1633.63s
+processed 299/5000 images. time: 103.41s, ETA: 1625.89s
+processed 329/5000 images. time: 114.13s, ETA: 1620.42s
+processed 359/5000 images. time: 124.78s, ETA: 1613.06s
+processed 389/5000 images. time: 134.95s, ETA: 1599.64s
+processed 419/5000 images. time: 145.39s, ETA: 1589.60s
+processed 449/5000 images. time: 155.80s, ETA: 1579.18s
+processed 479/5000 images. time: 166.55s, ETA: 1571.97s
+processed 509/5000 images. time: 177.32s, ETA: 1564.49s
+processed 539/5000 images. time: 187.58s, ETA: 1552.50s
+processed 569/5000 images. time: 197.86s, ETA: 1540.77s
+processed 599/5000 images. time: 208.20s, ETA: 1529.73s
+processed 629/5000 images. time: 218.68s, ETA: 1519.63s
+processed 659/5000 images. time: 229.07s, ETA: 1508.97s
+processed 689/5000 images. time: 239.91s, ETA: 1501.11s
+processed 719/5000 images. time: 250.64s, ETA: 1492.31s
+processed 749/5000 images. time: 260.98s, ETA: 1481.24s
+processed 779/5000 images. time: 271.61s, ETA: 1471.74s
+processed 809/5000 images. time: 281.99s, ETA: 1460.85s
+processed 839/5000 images. time: 292.32s, ETA: 1449.75s
+processed 869/5000 images. time: 302.88s, ETA: 1439.83s
+processed 899/5000 images. time: 313.44s, ETA: 1429.85s
+processed 929/5000 images. time: 324.15s, ETA: 1420.48s
+processed 959/5000 images. time: 335.09s, ETA: 1412.00s
+processed 989/5000 images. time: 345.73s, ETA: 1402.13s
+processed 1019/5000 images. time: 356.19s, ETA: 1391.54s
+processed 1049/5000 images. time: 367.04s, ETA: 1382.44s
+processed 1079/5000 images. time: 377.88s, ETA: 1373.20s
+processed 1109/5000 images. time: 388.43s, ETA: 1362.84s
+processed 1139/5000 images. time: 399.33s, ETA: 1353.65s
+processed 1169/5000 images. time: 410.43s, ETA: 1345.06s
+processed 1199/5000 images. time: 421.15s, ETA: 1335.10s
+processed 1229/5000 images. time: 431.85s, ETA: 1325.05s
+processed 1259/5000 images. time: 442.30s, ETA: 1314.26s
+processed 1289/5000 images. time: 452.78s, ETA: 1303.55s
+processed 1319/5000 images. time: 463.09s, ETA: 1292.36s
+processed 1349/5000 images. time: 473.88s, ETA: 1282.54s
+processed 1379/5000 images. time: 484.91s, ETA: 1273.28s
+processed 1409/5000 images. time: 495.54s, ETA: 1262.93s
+processed 1439/5000 images. time: 506.50s, ETA: 1253.41s
+processed 1469/5000 images. time: 517.05s, ETA: 1242.81s
+processed 1499/5000 images. time: 527.70s, ETA: 1232.48s
+processed 1529/5000 images. time: 537.92s, ETA: 1221.15s
+processed 1559/5000 images. time: 548.69s, ETA: 1211.05s
+processed 1589/5000 images. time: 559.33s, ETA: 1200.67s
+processed 1619/5000 images. time: 569.82s, ETA: 1189.98s
+processed 1649/5000 images. time: 580.38s, ETA: 1179.41s
+processed 1679/5000 images. time: 591.02s, ETA: 1169.01s
+processed 1709/5000 images. time: 601.72s, ETA: 1158.73s
+processed 1739/5000 images. time: 612.22s, ETA: 1148.04s
+processed 1769/5000 images. time: 622.91s, ETA: 1137.72s
+processed 1799/5000 images. time: 633.41s, ETA: 1127.04s
+processed 1829/5000 images. time: 644.14s, ETA: 1116.76s
+processed 1859/5000 images. time: 654.55s, ETA: 1105.94s
+processed 1889/5000 images. time: 665.17s, ETA: 1095.46s
+processed 1919/5000 images. time: 675.63s, ETA: 1084.74s
+processed 1949/5000 images. time: 686.33s, ETA: 1074.39s
+processed 1979/5000 images. time: 697.18s, ETA: 1064.26s
+processed 2009/5000 images. time: 707.99s, ETA: 1054.06s
+processed 2039/5000 images. time: 718.80s, ETA: 1043.83s
+processed 2069/5000 images. time: 729.64s, ETA: 1033.62s
+processed 2099/5000 images. time: 740.49s, ETA: 1023.42s
+processed 2129/5000 images. time: 750.74s, ETA: 1012.38s
+processed 2159/5000 images. time: 760.90s, ETA: 1001.25s
+processed 2189/5000 images. time: 771.17s, ETA: 990.29s
+processed 2219/5000 images. time: 781.63s, ETA: 979.59s
+processed 2249/5000 images. time: 792.20s, ETA: 969.03s
+processed 2279/5000 images. time: 802.70s, ETA: 958.38s
+processed 2309/5000 images. time: 813.00s, ETA: 947.51s
+processed 2339/5000 images. time: 823.82s, ETA: 937.23s
+processed 2369/5000 images. time: 834.63s, ETA: 926.93s
+processed 2399/5000 images. time: 845.20s, ETA: 916.37s
+processed 2429/5000 images. time: 855.76s, ETA: 905.78s
+processed 2459/5000 images. time: 866.90s, ETA: 895.80s
+processed 2489/5000 images. time: 877.12s, ETA: 884.87s
+processed 2519/5000 images. time: 887.79s, ETA: 874.40s
+processed 2549/5000 images. time: 898.19s, ETA: 863.65s
+processed 2579/5000 images. time: 908.46s, ETA: 852.81s
+processed 2609/5000 images. time: 918.39s, ETA: 841.65s
+processed 2639/5000 images. time: 928.80s, ETA: 830.96s
+processed 2669/5000 images. time: 939.19s, ETA: 820.25s
+processed 2699/5000 images. time: 949.59s, ETA: 809.56s
+processed 2729/5000 images. time: 960.03s, ETA: 798.91s
+processed 2759/5000 images. time: 970.27s, ETA: 788.11s
+processed 2789/5000 images. time: 980.74s, ETA: 777.49s
+processed 2819/5000 images. time: 991.06s, ETA: 766.76s
+processed 2849/5000 images. time: 1001.63s, ETA: 756.23s
+processed 2879/5000 images. time: 1011.96s, ETA: 745.52s
+processed 2909/5000 images. time: 1022.81s, ETA: 735.20s
+processed 2939/5000 images. time: 1033.19s, ETA: 724.54s
+processed 2969/5000 images. time: 1043.42s, ETA: 713.77s
+processed 2999/5000 images. time: 1054.09s, ETA: 703.31s
+processed 3029/5000 images. time: 1064.84s, ETA: 692.90s
+processed 3059/5000 images. time: 1075.83s, ETA: 682.64s
+processed 3089/5000 images. time: 1086.44s, ETA: 672.12s
+processed 3119/5000 images. time: 1097.01s, ETA: 661.58s
+processed 3149/5000 images. time: 1107.66s, ETA: 651.09s
+processed 3179/5000 images. time: 1118.12s, ETA: 640.48s
+processed 3209/5000 images. time: 1128.45s, ETA: 629.81s
+processed 3239/5000 images. time: 1138.85s, ETA: 619.18s
+processed 3269/5000 images. time: 1149.10s, ETA: 608.47s
+processed 3299/5000 images. time: 1159.47s, ETA: 597.84s
+processed 3329/5000 images. time: 1169.79s, ETA: 587.18s
+processed 3359/5000 images. time: 1180.09s, ETA: 576.52s
+processed 3389/5000 images. time: 1190.94s, ETA: 566.12s
+processed 3419/5000 images. time: 1201.31s, ETA: 555.50s
+processed 3449/5000 images. time: 1212.01s, ETA: 545.04s
+processed 3479/5000 images. time: 1222.66s, ETA: 534.54s
+processed 3509/5000 images. time: 1232.92s, ETA: 523.88s
+processed 3539/5000 images. time: 1243.09s, ETA: 513.18s
+processed 3569/5000 images. time: 1253.41s, ETA: 502.56s
+processed 3599/5000 images. time: 1263.61s, ETA: 491.89s
+processed 3629/5000 images. time: 1274.24s, ETA: 481.39s
+processed 3659/5000 images. time: 1284.73s, ETA: 470.85s
+processed 3689/5000 images. time: 1295.30s, ETA: 460.32s
+processed 3719/5000 images. time: 1305.91s, ETA: 449.82s
+processed 3749/5000 images. time: 1316.64s, ETA: 439.35s
+processed 3779/5000 images. time: 1327.31s, ETA: 428.86s
+processed 3809/5000 images. time: 1338.33s, ETA: 418.47s
+processed 3839/5000 images. time: 1349.17s, ETA: 408.02s
+processed 3869/5000 images. time: 1359.62s, ETA: 397.45s
+processed 3899/5000 images. time: 1370.37s, ETA: 386.97s
+processed 3929/5000 images. time: 1380.59s, ETA: 376.33s
+processed 3959/5000 images. time: 1390.82s, ETA: 365.71s
+processed 3989/5000 images. time: 1401.09s, ETA: 355.10s
+processed 4019/5000 images. time: 1411.50s, ETA: 344.53s
+processed 4049/5000 images. time: 1421.98s, ETA: 333.98s
+processed 4079/5000 images. time: 1432.27s, ETA: 323.39s
+processed 4109/5000 images. time: 1443.05s, ETA: 312.91s
+processed 4139/5000 images. time: 1453.75s, ETA: 302.41s
+processed 4169/5000 images. time: 1464.08s, ETA: 291.83s
+processed 4199/5000 images. time: 1474.67s, ETA: 281.31s
+processed 4229/5000 images. time: 1484.94s, ETA: 270.72s
+processed 4259/5000 images. time: 1495.05s, ETA: 260.11s
+processed 4289/5000 images. time: 1505.30s, ETA: 249.54s
+processed 4319/5000 images. time: 1515.80s, ETA: 239.01s
+processed 4349/5000 images. time: 1526.04s, ETA: 228.43s
+processed 4379/5000 images. time: 1536.75s, ETA: 217.93s
+processed 4409/5000 images. time: 1547.62s, ETA: 207.45s
+processed 4439/5000 images. time: 1558.03s, ETA: 196.90s
+processed 4469/5000 images. time: 1568.93s, ETA: 186.42s
+processed 4499/5000 images. time: 1580.24s, ETA: 175.97s
+processed 4529/5000 images. time: 1590.84s, ETA: 165.44s
+processed 4559/5000 images. time: 1601.38s, ETA: 154.90s
+processed 4589/5000 images. time: 1612.01s, ETA: 144.37s
+processed 4619/5000 images. time: 1622.33s, ETA: 133.82s
+processed 4649/5000 images. time: 1632.89s, ETA: 123.28s
+processed 4679/5000 images. time: 1643.06s, ETA: 112.72s
+processed 4709/5000 images. time: 1653.42s, ETA: 102.18s
+processed 4739/5000 images. time: 1663.88s, ETA: 91.64s
+processed 4769/5000 images. time: 1674.39s, ETA: 81.10s
+processed 4799/5000 images. time: 1684.90s, ETA: 70.57s
+processed 4829/5000 images. time: 1695.00s, ETA: 60.02s
+processed 4859/5000 images. time: 1705.61s, ETA: 49.49s
+processed 4889/5000 images. time: 1716.27s, ETA: 38.97s
+processed 4919/5000 images. time: 1726.81s, ETA: 28.43s
+processed 4949/5000 images. time: 1737.40s, ETA: 17.90s
+processed 4979/5000 images. time: 1747.74s, ETA: 7.37s
+Accumulating evaluation results...
+DONE (t=20.29s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.485
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.644
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.529
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.339
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.518
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.634
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.386
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.669
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.737
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.590
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.775
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.887
+Final results: [0.48492997796649423, 0.6440952048284158, 0.5294343500040071, 0.33938899127414984, 0.5178110613315107, 0.6337227559823642, 0.3859391586851767, 0.6685007493946463, 0.7374432801030781, 0.5900804431393171, 0.7751257008188694, 0.8873085802020343]
+
+end (UTC): 2026-09-26T15:16:04Z
+The reported COCO box AP is stats[0] of the 'Final results:' line, i.e.
+Average Precision @[ IoU=0.50:0.95 | area=all | maxDets=100 ].

@@ -1,0 +1,60 @@
+# --- Model checkpoints: never committed. See README for source URL + SHA256. ---
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+weights/
+checkpoints/
+
+# --- Datasets: never committed. COCO is ~1 GB; README documents how to fetch it. ---
+coco/
+data/coco/
+val2017/
+train2017/
+annotations/
+*.zip
+*.tar
+*.tar.gz
+
+# --- The upstream GroundingDINO checkout is cloned separately, not vendored. ---
+GroundingDINO/
+external/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.venv-repro/
+
+# --- Caches ---
+.cache/
+hf_cache/
+~/.cache/
+*.log.gz
+
+# --- Large media ---
+*.mp4
+*.avi
+*.mkv
+*.webm
+*.ogv
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

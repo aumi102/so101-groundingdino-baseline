@@ -1,0 +1,78 @@
+{
+  "_note": "Reproduction of a PUBLISHED evaluation of the OFFICIAL PRETRAINED model. No training or fine-tuning was performed. This is not a project-specific mAP.",
+  "model": "GroundingDINO Swin-T OGC (official pretrained checkpoint)",
+  "task": "COCO zero-shot object detection",
+  "dataset": {
+    "name": "COCO val2017",
+    "num_images": 5000,
+    "num_annotations": 36781,
+    "num_categories": 80,
+    "annotations_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+  },
+  "provenance": {
+    "upstream_repo": "https://github.com/IDEA-Research/GroundingDINO",
+    "commit": "856dde20aee659246248e20734ef9ba5214f5e44",
+    "config": "groundingdino/config/GroundingDINO_SwinT_OGC.py",
+    "config_sha256": "172e80017f9395668a9cb5d1b8bd9d061c0e360471c6ed673c83b69bb14399f1",
+    "checkpoint": "groundingdino_swint_ogc.pth",
+    "checkpoint_release": "v0.1.0-alpha",
+    "checkpoint_bytes": 693997677,
+    "checkpoint_sha256": "3b3ca2563c77c69f651d7bd133e97139c186df06231157a64c507099c52bc799",
+    "evaluator": "demo/test_ap_on_coco.py (upstream, unmodified)",
+    "modifications_to_upstream": "none"
+  },
+  "official_reference": {
+    "readme_ap": 48.5,
+    "checkpoint_table_ap": 48.4,
+    "note": "48.5 is what the upstream README states for the bundled evaluation script; 48.4 is the model's published zero-shot box AP in the checkpoint table. The script is the operative target here."
+  },
+  "reproduced_percent": {
+    "ap": 48.493,
+    "ap50": 64.41,
+    "ap75": 52.943,
+    "aps": 33.939,
+    "apm": 51.781,
+    "apl": 63.372,
+    "ar_max1": 38.594,
+    "ar_max10": 66.85,
+    "ar_max100": 73.744,
+    "ars": 59.008,
+    "arm": 77.513,
+    "arl": 88.731
+  },
+  "reproduced_raw": {
+    "ap": 0.48492997796649423,
+    "ap50": 0.6440952048284158,
+    "ap75": 0.5294343500040071,
+    "aps": 0.33938899127414984,
+    "apm": 0.5178110613315107,
+    "apl": 0.6337227559823642,
+    "ar_max1": 0.3859391586851767,
+    "ar_max10": 0.6685007493946463,
+    "ar_max100": 0.7374432801030781,
+    "ars": 0.5900804431393171,
+    "arm": 0.7751257008188694,
+    "arl": 0.8873085802020343
+  },
+  "delta_vs_readme_48_5": -0.007,
+  "delta_vs_checkpoint_table_48_4": 0.093,
+  "verdict": "PASS",
+  "run": {
+    "wall_clock": "29 min 51 s",
+    "start_utc": "2026-09-26T14:46:13Z",
+    "end_utc": "2026-09-26T15:16:04Z",
+    "num_workers": "upstream default, unchanged",
+    "swap_used": "0 B"
+  },
+  "environment": {
+    "os": "WSL2 Ubuntu 22.04.5 LTS (Windows 11 host)",
+    "python": "3.10.12",
+    "cuda_toolkit": "12.1 (V12.1.105)",
+    "torch": "2.1.2+cu121",
+    "torchvision": "0.16.2+cu121",
+    "transformers": "4.36.2",
+    "numpy": "1.26.4",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "driver": "592.82"
+  }
+}

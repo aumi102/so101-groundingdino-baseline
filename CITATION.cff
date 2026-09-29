@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+title: >-
+  GroundingDINO Baseline for SO-101 Conveyor Grasping:
+  reproduction and perception benchmarks
+message: >-
+  This repository reproduces and benchmarks a published model. If you use it,
+  please cite the Grounding DINO paper below as the primary reference -- this
+  repository is a reproduction study, not the source of the method or the model.
+type: software
+abstract: >-
+  A strict reproduction of the official Grounding DINO (Swin-T, OGC) COCO
+  val2017 zero-shot evaluation, together with a runtime benchmark and a
+  provisional project detector baseline for a conveyor-belt grasping capstone
+  using an SO-101 manipulator. No model training or fine-tuning is performed;
+  the officially released pretrained checkpoint is evaluated unmodified.
+authors:
+  - name: SO-101 Capstone Perception Team
+repository-code: https://github.com/somene112/so101-groundingdino-baseline
+license: MIT
+keywords:
+  - object-detection
+  - open-vocabulary-detection
+  - reproducibility
+  - robotics
+  - visual-servoing
+  - benchmark
+
+references:
+  - type: article
+    title: >-
+      Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set
+      Object Detection
+    authors:
+      - family-names: Liu
+        given-names: Shilong
+      - family-names: Zeng
+        given-names: Zhaoyang
+      - family-names: Ren
+        given-names: Tianhe
+      - family-names: Li
+        given-names: Feng
+      - family-names: Zhang
+        given-names: Hao
+      - family-names: Yang
+        given-names: Jie
+      - family-names: Li
+        given-names: Chunyuan
+      - family-names: Yang
+        given-names: Jianwei
+      - family-names: Su
+        given-names: Hang
+      - family-names: Zhu
+        given-names: Jun
+      - family-names: Zhang
+        given-names: Lei
+    year: 2023
+    journal: arXiv preprint arXiv:2303.05499
+    url: https://arxiv.org/abs/2303.05499
+    notes: >-
+      The method and the pretrained model reproduced by this repository.
+      Upstream code: https://github.com/IDEA-Research/GroundingDINO (Apache-2.0).

@@ -1,0 +1,33 @@
+{
+  "_note": "Deployment-side latency of the OFFICIAL PRETRAINED detector. Not a training or accuracy metric. Separate from the COCO reproduction, which answers a different question.",
+  "implementation": "official IDEA-Research GroundingDINO @ 856dde2, unmodified",
+  "protocol": {
+    "gpu_state": "idle, no other GPU work",
+    "warmup_iters_discarded": 5,
+    "timed_iters": 30,
+    "measured": "detector forward + postprocess only; no decode, no tracking, no drawing",
+    "source_resolution": "1080x1920",
+    "model_input_transform": "shortest edge 800, max 1333 (official load_image transform)"
+  },
+  "latency_ms": {
+    "mean": 243.44,
+    "p50": 243.88,
+    "p95": 253.58,
+    "p99": 254.55,
+    "min": 235.05,
+    "max": 254.69
+  },
+  "throughput_fps": {
+    "mean": 4.11,
+    "p95": 3.94
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "visual_servoing_implication": {
+    "camera_fps_assumption": 30,
+    "camera_period_ms": 33.3,
+    "detector_p95_ms": 253.58,
+    "ratio": 7.6,
+    "statement": "The current GroundingDINO configuration is a detector-side real-time bottleneck for per-frame 30 FPS visual servoing.",
+    "not_established": "This does NOT establish that GroundingDINO cannot be used for visual servoing. Lower input resolution, a reduced detection rate, other backbones and other hardware were not evaluated."
+  }
+}

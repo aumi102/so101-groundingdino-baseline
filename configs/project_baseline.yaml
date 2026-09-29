@@ -1,0 +1,64 @@
+# Project detector baseline settings.
+#
+# These are the settings the recorded project-baseline numbers were produced with. They are
+# NOT tuned for the capstone's real task, because the capstone's real task is not yet defined:
+# the conveyor objects have not been chosen and no labelled footage exists.
+#
+# See docs/project_baseline.md for the evidence behind every value here.
+
+detector:
+  # The officially released PRETRAINED checkpoint. No training or fine-tuning is performed
+  # anywhere in this repository.
+  implementation: official            # IDEA-Research/GroundingDINO @ 856dde2
+  model: GroundingDINO-T              # Swin-T backbone, O365 + GoldG + Cap4M
+  config: groundingdino/config/GroundingDINO_SwinT_OGC.py
+  checkpoint: weights/groundingdino_swint_ogc.pth
+  device: cuda
+
+prompt:
+  # -------------------------------------------------------------------------------------
+  # PROVISIONAL. Generic warehouse vocabulary standing in for conveyor objects that have not
+  # been selected yet. Replace before quoting any accuracy number.
+  #
+  # Measured evidence already argues against this exact set (docs/project_baseline.md §3):
+  #   * "can"     produced ZERO detections on every proxy image at every threshold tested
+  #   * "package" fired on EVERY image, including one containing only machinery
+  #   * the combined prompt returned 0 detections on a frame where the individual prompts
+  #     returned 3 -- open-vocabulary classes compete for query slots, so adding a class can
+  #     lose detections of another
+  # -------------------------------------------------------------------------------------
+  status: PROVISIONAL
+  text: "box . bottle . can . package ."
+
+  # Grounding DINO expects lower-case classes separated by " . " with a trailing period.
+
+thresholds:
+  # Detections below this score are dropped. The sweep in docs/project_baseline.md §4 shows
+  # 0.20 -> 23 detections (mean conf 0.334) and 0.40 -> 5 (mean conf 0.543) over six proxy
+  # images. 0.30 is a middle value, NOT an optimum -- choosing an optimum requires labels.
+  box_threshold: 0.30
+
+  # Filters which tokens are kept when mapping a box back to a phrase. Measured to have NO
+  # effect at 0.20 / 0.25 / 0.30 with the single-word class names above, since there is nothing
+  # for it to cut. It becomes relevant with multi-word classes such as "cardboard box", which
+  # the project may end up using -- do not assume it is inert once the vocabulary is real.
+  text_threshold: 0.25
+
+benchmark:
+  # Rules that keep the latency numbers trustworthy. See scripts/benchmark_detector.py.
+  warmup_iters: 5        # discarded; the first inference pays kernel autotuning
+  timed_iters: 30
+  require_idle_gpu: true # a contended GPU inflated this measurement ~6% and doubled variance
+  synchronize_cuda: true # else you time the kernel launch, not the work
+
+evaluation:
+  # There is no project-specific accuracy metric, and none may be invented.
+  project_accuracy: NOT_MEASURABLE
+  reason: >-
+    No real conveyor footage with bounding-box ground truth has been collected and labelled.
+    The COCO reproduction AP (48.493) measures the published model on a public benchmark and
+    is NOT a project mAP.
+  required_to_unblock:
+    - footage of the actual conveyor, objects, lighting and camera placement
+    - a chosen object vocabulary
+    - bounding-box annotations in COCO format on a held-out set
